@@ -20,6 +20,11 @@ header nav ul li a {
     color: #ffffff; /* White navigation text */
 }
 
+/* Align h2 to the left */
+h2 {
+    text-align: left;
+}
+
 .center-link {
     color: #ffffff; /* White center link text */
     text-align: left;
@@ -92,6 +97,7 @@ footer {
 }
 
 .footer-container .logo img {
+    margin-top: 1px; /* Add more margin-top to move the button down */
     max-height: 60px;
 }
 
@@ -196,7 +202,7 @@ body {
 
 /* Header styles */
 header {
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -239,37 +245,47 @@ nav ul li a:hover {
 /* Hero section styles */
 .hero {
     background: #ffffff;
-    padding: 40px 40px;
+    padding: 40px 60px; /* Increase padding to enlarge height */
     text-align: center;
     border-radius: 15px;
 }
 
 .hero-content {
-    max-width: 1200px;
-    margin: 20 auto;
+    max-width: 800px;
+    margin: 10 auto;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .hero p {
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: left;
 }
 
+.hero p1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
 .hero-button {
-    font-size: 28px;
+    font-size: 20px;
     background-color: #6a1b9a;
     color: #ffffff;
-    padding: 20px 50px;
+    padding: 20px 40px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 15px;
     transition: background-color 0.3s ease;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+    margin-top: 30px; /* Add more margin-top to move the button down */
 }
 
 .hero-button:hover {
