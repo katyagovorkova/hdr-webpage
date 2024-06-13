@@ -1,6 +1,6 @@
 /* Gradient background with lighter blue towards the outside and darker towards the circles */
 body {
-    background: linear-gradient(to bottom, #123456, #0b1d46); /* Darker towards the circles */
+    background: linear-gradient(to bottom, #6a1b9a 10%, #1a237e 90%); /* Darker towards the circles */
     color: #ffffff; /* White text color */
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -77,7 +77,7 @@ header nav ul li a {
 /* Footer styles */
 footer {
     background-color: #ffffff;
-    color: #0b1d46;
+    color: #ffffff;
     padding: 20px 0;
 }
 
@@ -88,6 +88,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    color: #ffffff;
 }
 
 .footer-container .logo img {
@@ -96,15 +97,18 @@ footer {
 
 .footer-container h5 {
     margin-top: 0;
+    color: #ffffff;
 }
 
 .social, .newsletter, .footer-menu, .copyright {
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .social-container {
     display: flex;
     gap: 15px;
+    color: #ffffff;
 }
 
 .social-link {
@@ -119,6 +123,7 @@ footer {
     width: 18px;
     height: 18px;
     margin-right: 8px;
+    color: #ffffff;
 }
 
 .newsletter {
@@ -234,14 +239,14 @@ nav ul li a:hover {
 /* Hero section styles */
 .hero {
     background: #ffffff;
-    padding: 20px 30px;
+    padding: 40px 40px;
     text-align: center;
     border-radius: 15px;
 }
 
 .hero-content {
     max-width: 1200px;
-    margin: 10 auto;
+    margin: 20 auto;
 }
 
 .hero h1 {
@@ -252,19 +257,19 @@ nav ul li a:hover {
 
 .hero p {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .hero-button {
-    font-size: 24px;
-    background-color: #0b1d46;
+    font-size: 28px;
+    background-color: #6a1b9a;
     color: #ffffff;
-    padding: 10px 50px;
+    padding: 20px 50px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 15px;
     transition: background-color 0.3s ease;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .hero-button:hover {
