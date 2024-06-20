@@ -34,7 +34,7 @@ h2 {
 
 .image-row {
     display: flex;
-    width: 100%;
+    width: 96%;
     height: auto;
     gap: 20px;
     justify-content: center;
@@ -122,7 +122,7 @@ footer {
     gap: 15px;
     border-radius: 20px;
     border: 3px solid #6a1b9a;
-    padding: 12px 2px;
+    padding: 12px;
     color: #ffffff;
     background-color: #6a1b9a;
     box-shadow: 0 0 20px #00000050;
