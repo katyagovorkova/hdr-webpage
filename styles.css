@@ -129,7 +129,7 @@ footer {
     justify-content: center;
     display: flex;
     gap: 10px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     border-radius: 20px;
     /* border: 3px solid #6a1b9a; */
     padding: 24px 40px;
@@ -142,7 +142,7 @@ footer {
 
 .social-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     gap: 10px;
 }
@@ -160,8 +160,9 @@ footer {
 }
 
 .social-owner {
-    margin-bottom: 5px;
-    font-weight: bold;
+    /* margin-bottom: 5px; */
+    margin-right: 10px;
+    /* font-weight: bold; */
     font-size: 16px;
 }
 
