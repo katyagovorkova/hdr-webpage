@@ -34,7 +34,7 @@ h2 {
 
 .image-row {
     display: flex;
-    width: 96%;
+    width: 90%;
     height: auto;
     gap: 20px;
     justify-content: center;
@@ -65,13 +65,17 @@ h2 {
 .hover-text {
     display: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    top: 0;
+    left: 0;
+    padding: 20px;
+
     color: #ffffff; /* White text color */
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     text-align: center;
-    padding: 1px;
     border-radius: 0px;
 }
 
@@ -80,7 +84,7 @@ h2 {
 }
 
 .circle:hover .hover-text {
-    display: block; /* Show the text */
+    display: flex; /* Show the text */
 }
 
 /* Footer styles */
@@ -115,17 +119,32 @@ footer {
     padding: 20px;
 }
 
+.social {
+    width: 100%;
+    max-width: 800px;
+}
+
 .social-container {
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    justify-content: space-evenly;
     border-radius: 20px;
-    border: 3px solid #6a1b9a;
-    padding: 12px;
+    /* border: 3px solid #6a1b9a; */
+    padding: 24px 40px;
+
     color: #ffffff;
-    background-color: #6a1b9a;
+    /* background-color: #6a1b9a; */
+    background: linear-gradient(to bottom, #6a1b9a 10%, #1a237e 90%);
     box-shadow: 0 0 20px #00000050;
+}
+
+.social-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
 }
 
 .social-link {
@@ -134,6 +153,16 @@ footer {
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+.social-owner {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .social-link svg {
@@ -304,9 +333,11 @@ nav ul li a:hover {
     border-radius: 20px;
     transition: background-color 0.3s ease;
 
+
+
 }
 
-.hero-button:hover {
-    background-color: #ffffff;
+.hero-button a:hover {
+    background-color: #d09fee;
     color: #0b1d46;
 }
