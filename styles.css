@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 150vh;
+    /* height: 150vh; */
 }
 
 header {
@@ -34,20 +34,22 @@ h2 {
 
 .image-row {
     display: flex;
-    gap: 60px; /* Increased space between the images */
-    padding: 40px 0;
     width: 100%;
+    height: auto;
+    gap: 20px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .circle {
-    width: 400px; /* 1.25 times larger than the original 300px */
-    height: 400px;
+    width: auto;
+    height: auto;
+    margin: 0 20px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid #ffffff;
     transition: transform 0.3s ease;
-    text-decoration: none; /* Remove underline from links */
+    text-decoration: none;
     position: relative;
 }
 
@@ -65,7 +67,7 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff; /* White text color */
-    font-size: 22px; /* Large text size */
+    font-size: 1.8vw;
     text-align: center;
     padding: 1px;
     border-radius: 0px;
@@ -107,14 +109,16 @@ footer {
 }
 
 .social, .newsletter, .footer-menu, .copyright {
-    margin-bottom: 20px;
     color: #ffffff;
+    padding: 20px;
 }
 
 .social-container {
+    flex-wrap: wrap;
+    justify-content: center;
     display: flex;
     gap: 15px;
-    color: #ffffff;
+    color: #ffffff
 }
 
 .social-link {
@@ -276,16 +280,22 @@ nav ul li a:hover {
     text-align: center;
 }
 .hero-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hero-button a {
     font-size: 20px;
+    width: fit-content;
     background-color: #6a1b9a;
     color: #ffffff;
-    padding: 20px 40px;
+    padding: 20px 30px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: 30px; /* Add more margin-top to move the button down */
+
 }
 
 .hero-button:hover {
