@@ -1,6 +1,6 @@
 /* Gradient background with lighter blue towards the outside and darker towards the circles */
 body {
-    background: linear-gradient(to bottom, #6a1b9a 10%, #1a237e 90%); /* Darker towards the circles */
+    /* background: linear-gradient(to bottom, #6a1b9a 10%, #1a237e 90%); Darker towards the circles */
     color: #ffffff; /* White text color */
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -47,10 +47,12 @@ h2 {
     margin: 0 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #ffffff;
     transition: transform 0.3s ease;
     text-decoration: none;
     position: relative;
+    box-shadow: 0 0 30px #00000050;
+    background-color: #6a1b9a;
+    border: 3px solid #6a1b9a;
 }
 
 .circle img {
@@ -109,7 +111,7 @@ footer {
 }
 
 .social, .newsletter, .footer-menu, .copyright {
-    color: #ffffff;
+    /* color: #ffffff; */
     padding: 20px;
 }
 
@@ -118,7 +120,12 @@ footer {
     justify-content: center;
     display: flex;
     gap: 15px;
-    color: #ffffff
+    border-radius: 20px;
+    border: 3px solid #6a1b9a;
+    padding: 12px 2px;
+    color: #ffffff;
+    background-color: #6a1b9a;
+    box-shadow: 0 0 20px #00000050;
 }
 
 .social-link {
@@ -252,6 +259,7 @@ nav ul li a:hover {
     padding: 40px 60px; /* Increase padding to enlarge height */
     text-align: center;
     border-radius: 15px;
+    box-shadow: 0 0 30px #00000050;
 }
 
 .hero-content {
