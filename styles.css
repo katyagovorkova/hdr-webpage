@@ -17,7 +17,7 @@ header {
 
 
 header nav ul li a {
-    color: #ffffff; /* White navigation text */
+    color: #6a1b9a; /* White navigation text */
 }
 
 /* Align h2 to the left */
@@ -341,4 +341,20 @@ nav ul li a:hover {
 .hero-button a:hover {
     background-color: #d09fee;
     color: #0b1d46;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
 }
