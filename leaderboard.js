@@ -1,43 +1,38 @@
-// script.js
-async function getData() {
-  const url = "https://www.codabench.org/api/competitions/2626/results.json";
-  // try {
-  //   const response = await fetch(url);
-  //   if (!response.ok) {
-  //     throw new Error(`Response status: ${response.status}`);
-  //   }
+// leaderboard.js
 
-  //   const json = await response.json();
-  //   console.log(json);
-
-    json = {"User":"a3d3","Score A3D3":"0.8","Score imageomics":"0.6","Score iHARP":"0.7"};
-    json["Total score"] = calculateTotalScore(json);
-    displayTable(json);
-
-//     // Check if the response contains an error message
-//     if (json.detail) {
-//       displayError(json.detail);
-//     } else {
-//       // Assuming json contains valid data, display it as a table
-//       displayTable(json);
-//     }
-//   } catch (error) {
-//     console.error(error.message);
-//     displayError('Failed to load data.');
-//   }
+async function getJson(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(error.message);
+    return null;
+  }
 }
 
-function calculateTotalScore(data) {
-  const scoreA3D3 = parseFloat(data["Score A3D3"]) || 0;
-  const scoreImageomics = parseFloat(data["Score imageomics"]) || 0;
-  const scoreiHARP = parseFloat(data["Score iHARP"]) || 0;
+async function aggregateScores(urls) {
+  const ownerScores = {};
 
-  return (scoreA3D3 + scoreImageomics + scoreiHARP).toFixed(1);
-}
+  for (const url of urls) {
+    const jsonData = await getJson(url);
+    if (jsonData && Array.isArray(jsonData.submissions)) {
+      jsonData.submissions.forEach(submission => {
+        const owner = submission.owner;
+        const score = parseFloat(submission.scores[0]?.score) || 0;
 
-function displayError(message) {
-  const container = document.getElementById('leaderboard-content');
-  container.innerText = message;
+        if (ownerScores[owner]) {
+          ownerScores[owner] += score;
+        } else {
+          ownerScores[owner] = score;
+        }
+      });
+    }
+  }
+
+  displayTable(ownerScores);
 }
 
 function displayTable(data) {
@@ -62,7 +57,7 @@ function displayTable(data) {
   const dataRow = document.createElement('tr');
   Object.values(data).forEach(value => {
     const td = document.createElement('td');
-    td.innerText = value;
+    td.innerText = value.toPrecision(3);
     dataRow.appendChild(td);
   });
   tbody.appendChild(dataRow);
@@ -75,5 +70,22 @@ function displayTable(data) {
   container.appendChild(table);
 }
 
-// Call the function
-getData();
+
+async function main() {
+  // URLs of the JSON files
+  // const url_a3d3 = "https://www.codabench.org/api/leaderboards/2744/";
+  const urls = [
+    './scores/a3d3.json',
+    './scores/iharp.json',
+    './scores/imageomics.json'
+  ];
+
+  // Get aggregated scores
+  const scores = await aggregateScores(urls);
+
+  // Output the results
+  console.log('Aggregated Scores by Owner:', scores);
+}
+
+// Call the main function
+main();
