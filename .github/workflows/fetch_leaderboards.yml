@@ -22,7 +22,7 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add scores/leaderboard.json
+        git add scores/a3d3.json
         git commit -m "Update leaderboard data"
         git push
       env:
