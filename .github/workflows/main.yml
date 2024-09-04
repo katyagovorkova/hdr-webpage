@@ -1,0 +1,29 @@
+name: Fetch Scores and Upload
+
+on:
+  schedule:
+    # Run once every 24 hours
+    - cron: '0 0 * * *'
+
+jobs:
+  fetch-scores:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Fetch leaderboard data
+      run: |
+        curl -o scores/a3d3.json "https://www.codabench.org/api/leaderboards/2744/?format=json"
+    
+    - name: Commit and push leaderboard data
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add scores/leaderboard.json
+        git commit -m "Update leaderboard data"
+        git push
+      env:
+        # Set up GitHub token to authenticate for push
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
