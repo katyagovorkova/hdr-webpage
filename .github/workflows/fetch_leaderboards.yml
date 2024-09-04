@@ -17,6 +17,7 @@ jobs:
     - name: Fetch leaderboard data
       run: |
         curl -o scores/a3d3.json "https://www.codabench.org/api/leaderboards/2744/?format=json"
+        curl -o scores/iharp.json "https://www.codabench.org/api/leaderboards/3372/?format=json"
     
     - name: Commit and push leaderboard data
       run: |
