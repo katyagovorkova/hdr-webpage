@@ -18,8 +18,16 @@ jobs:
       run: |
         curl -o scores/a3d3.json "https://www.codabench.org/api/leaderboards/2744/?format=json"
         curl -o scores/iharp.json "https://www.codabench.org/api/leaderboards/3372/?format=json"
-    
-    - name: Commit and push leaderboard data
+
+    - name: Check for changes in the scores folder
+      run: |
+        git fetch origin
+        git diff --exit-code origin/main -- scores/
+      continue-on-error: true
+      id: changes_detected
+
+    - name: Commit and push leaderboard data if changes are detected
+      if: steps.changes_detected.outcome != 'success'
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
