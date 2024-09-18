@@ -18,6 +18,7 @@ jobs:
       run: |
         curl -o scores/a3d3.json "https://www.codabench.org/api/leaderboards/2744/?format=json"
         curl -o scores/iharp.json "https://www.codabench.org/api/leaderboards/3372/?format=json"
+        curl -o scores/imageomics.json "https://www.codabench.org/api/leaderboards/3983/?format=json"
 
     - name: Check for changes in the scores folder
       run: |
@@ -33,6 +34,7 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add scores/a3d3.json
         git add scores/iharp.json
+        git add scores/imageomics.json
         git commit -m "Update leaderboard data"
         git push
       env:
