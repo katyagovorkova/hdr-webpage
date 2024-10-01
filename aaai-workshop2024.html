@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSF HDR ML Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .video-container {
+            margin-top: 20px; /* Adjust the value to control the space between button and video */
+            text-align: center; /* Optional: Center the video */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <section class="hero">
+        <div id="logo"></div>
+        <div class="hero-content" id="leaderboard-content">
+        <h1>Anomaly Detection in Scientific Domains AAAI Workshop</h1>
+        <h2>Description</h2>
+        <p1>
+            Scientific discovery often involves the observation of an inconsistency among “normal” patterns within our data. The observation of something different, incongruous with the data, is what we call anomaly detection. 
+            Looking for anomalies is quite different from other tasks since we do not know what exactly to look for—we just need to look for something different. The goal of this workshop is to nurture the community of researchers working at the intersection of machine learning and various scientific domains toward scientific discovery. 
+        </p1>
+        <p2>
+            This workshop will also serve as the award ceremony with special recognition of the winners for the <a href="https://www.nsfhdr.org/mlchallenge" target="_blank">1st HDR Interdisciplinary Machine Learning Challenge</a> focusing on anomaly detection. 
+            The challenge is a series of 4 challenges one for each of three distinct scientific domains (biology, physics, and climate science), and a combined challenge across domains. A critical element of this challenge was the integration of FAIR and Reproducible science. 
+        </p2>
+        <h2>Topics</h2>
+        <p1>
+            We encourage participation from researchers in a broad range of topics that explore AI/ML techniques to detect novel patterns and anomalies within data and promote scientific discovery. Examples of research questions include (but are not limited to): 
+            (1) How can we automate the discovery of new scientific phenomena? (2) How can we embed a notion of uncertainty within AI/ML to quantify the significance of a discovery? (3) How do we ensure FAIR reproducibility of these discoveries? (4) What interpretable AI/ML approaches can lead to direct explanations of these discoveries?
+        </p1>
+        <h2>Format</h2>
+        <p1>
+            Our 1-day workshop will include keynote/invited talks, contributed paper presentations, a poster session, a panel discussion, and winning team presentations of their solutions to the challenge.
+        </p1>
+        <h2>Attendance</h2>
+        <p1>
+            The intended audience for this workshop includes (a) AI/ML/data science researchers working on topics such as anomaly and novelty detection, out-of-distribution detection, open world recognition, scientific discovery, and FAIR dataset and reproducible workflows, who are looking for novel interdisciplinary research problems; (b) domain scientists working on problems with data-driven scientific discoveries.
+        </p1>
+        <h3>Submission Requirements</h3>
+        <p1>
+            We are accepting extended abstract submissions for position, review, or research results (up to 2 pages, excluding references). Shorter versions (up to 6 pages, excluding references) of articles in submission or accepted at other venues (or presented after Oct. 1, 2024) are acceptable as long as they do not violate the dual-submission policy of the other venue. All submissions will undergo peer review and authors will have the option to publish their work in arXiv proceedings.
+        </p1>
+        <div class="hero-button">
+            <a href="URL_HERE" target="_blank">Apply Today!</a>
+        </div>
+        <h2>Organizing Committee</h2>
+        <ul>
+            <li>
+                Wei-Lun Chao (The Ohio State University, chao.209@osu.edu, primary contact)
+            </li>
+            <li>
+                Philip Harris (Massachusetts Institute of Technology, pcharris@mit.edu)
+            </li>
+            <li>
+                Elizabeth G. Campolongo (The Ohio State University, campolongo.4@osu.edu)
+            </li>
+            <li>
+                Yuan-Tang Chou (University of Washington, ytchou@uw.edu)
+            </li>
+            <li>
+                Katya Govorkova (Massachusetts Institute of Technology, katyag@mit.edu)
+            </li>
+            <li>
+                Hilmar Lapp (Duke University, hilmar.lapp@duke.edu)
+            </li>
+            <li>
+                Josephine Namayanja (University of Maryland, Baltimore County, jona1@umbc.edu)
+            </li>
+            <li>
+                Aneesh Subramanian (University of Colorado Boulder, aneeshcs@colorado.edu)
+            </li>
+        </ul>
+        </div>
+
+    <!-- Embed the video below this section -->
+    <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6NNO0SVhL2c?si=z2LaTUYd46Hlp_un" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+
+    <div class="hero-button">
+        <a href="rules.html" target="_blank">Participate in the Anomaly Detection challenge</a>
+    </div>
+
+    </section>
+
+    <div class="image-row">
+        <a href="https://www.codabench.org/competitions/3764/" target="_blank" class="circle" id="circle1">
+            <img src="images/butterfly.jpg" alt="Butterfly">
+            <div class="hover-text" id="hover-text1">
+                Discovering hybrid butterfly species through pattern recognition in image datasets
+            </div>
+        </a>
+        <a href="https://www.codabench.org/competitions/2626" target="_blank" class="circle" id="circle2">
+            <img src="images/gw.jpg" alt="GW">
+            <div class="hover-text" id="hover-text2">
+                Finding unmodeled gravitational wave events, such as potential supernovae, in detector data
+            </div>
+        </a>
+        <a href="https://www.codabench.org/competitions/3223" target="_blank" class="circle" id="circle3">
+            <img src="images/water_levels.jpg" alt="Water Levels">
+            <div class="hover-text" id="hover-text3">
+                Identifying unusual fluctuations in water levels that do not correspond to known environmental factors or historical data patterns
+            </div>
+        </a>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Function to load external HTML into an element
+        function loadHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        // Load header, navigation, and footer
+        loadHTML('layout/header.html', 'header');
+        loadHTML('layout/logo.html', 'logo');
+        loadHTML('layout/footer.html', 'footer');
+    </script>
+
+</body>
+</html>
